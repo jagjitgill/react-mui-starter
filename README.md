@@ -1,8 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Features:
--
+[Demo](https://github.jagjitgill.ca/)
+
 ## Features
 - Built with React 17 and [Material UI](https://material-ui.com/)
 - Internationalization using [i18next](https://react.i18next.com/)

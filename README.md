@@ -1,7 +1,17 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Features:
+-
+## Features
+- Built with React 17 and [Material UI](https://material-ui.com/)
+- Internationalization using [i18next](https://react.i18next.com/)
+- [Router](https://reactrouter.com/web/guides/quick-start) included
+- `eslint` and `prettier` configured
+- Sample Home, Sign In and 404 page
+- Dynamic nested menu from json file
+- Other base features like loading, base layout and page layout component
+- Created with [Create react app](https://github.com/facebook/create-react-app)
 ## Available Scripts
 
 In the project directory, you can run:
@@ -68,3 +78,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## App screenshot
+![screenshot](./app-screenshot.png)
+**Sign In**
+![Sign In](./app-sign-in-screenshot.png)
+**404 page and Mobile**
+![404 and mobile](./app-404-mobile.png)

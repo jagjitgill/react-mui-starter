@@ -4,6 +4,7 @@ import List from "@material-ui/core/List";
 import Box from "@material-ui/core/Box";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
 import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
@@ -50,24 +51,32 @@ const SideBar = (props) => {
           <div key={subOption.id}>
             <ListItem button>
               <Link to={subOption.url} className={classes.link}>
-                <ListItemText primary={subOption.name} />
+                <ListItemText
+                  primary={
+                    <Typography color="primary">{subOption.name}</Typography>
+                  }
+                />
               </Link>
             </ListItem>
           </div>
         );
       }
       return (
-        <div key={subOption.id}>
+        <Box key={subOption.id} color="primary">
           <ListItem
             button
             onClick={() => handleExpandableItemClick(subOption.id)}
           >
-            <ListItemText primary={subOption.name} />
+            <ListItemText
+              primary={
+                <Typography color="primary">{subOption.name}</Typography>
+              }
+            />
             <Box ml={3}>
               {openItems.includes(subOption.id) ? (
-                <ExpandLess />
+                <ExpandLess color="primary" />
               ) : (
-                <ExpandMore />
+                <ExpandMore color="primary" />
               )}
             </Box>
           </ListItem>
@@ -78,7 +87,7 @@ const SideBar = (props) => {
           >
             {renderMenuItems(subOption.children)}
           </Collapse>
-        </div>
+        </Box>
       );
     });
   };

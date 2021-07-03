@@ -17,15 +17,26 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SideBar from "./SideBar";
 import menuItemsList from "./menuItemsList";
+import Logo from "../../logo.svg";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  brand: {},
+  toolbar: {
+    justifyContent: "space-between",
+  },
+  logo: {
+    maxHeight: 50,
+  },
+  brand: {
+    whiteSpace: "nowrap",
+    alignSelf: "center",
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+  },
   menuWrapper: {
-    flexGrow: 1,
     justifyContent: "flex-end",
   },
   menuList: {
@@ -132,6 +143,7 @@ const TopBar = () => {
                   href="/"
                   className={classes.menuLink}
                   component={Link}
+                  variant="body1"
                   to={subOption.url}
                 >
                   {t(subOption.name)}
@@ -152,6 +164,7 @@ const TopBar = () => {
                 onClick={handleMenuItemClick}
                 tabIndex="0"
                 color="primary"
+                variant="body1"
                 className={
                   isSubSubMenu ? classes.menuLink : classes.menuSubLink
                 }
@@ -179,20 +192,22 @@ const TopBar = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent">
-        <Toolbar>
-          <Box className={classes.brand} mx={2}>
-            <Typography>Sample App</Typography>
+        <Toolbar className={classes.toolbar}>
+          <Box display="flex">
+            <img src={Logo} alt="Logo" className={classes.logo} />
+            <Typography component="div" className={classes.brand}>
+              Brand Name
+            </Typography>
+            <Divider orientation="vertical" flexItem />
           </Box>
-          <Divider orientation="vertical" flexItem />
           <Box className={classes.menuWrapper} display="flex">
             <Hidden smDown>{renderMenuItems(menuItemsList.data)}</Hidden>
             <Hidden mdUp>
               <IconButton
-                only="xs"
                 edge="start"
                 className={classes.menuButton}
                 color="inherit"
-                aria-label="menu"
+                aria-label={t("Menu")}
                 onClick={() => toggleSidebarDisplay()}
               >
                 <MenuIcon />

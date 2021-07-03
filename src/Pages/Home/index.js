@@ -40,7 +40,12 @@ const Home = (props) => {
               <Grid item xs={12} sm={6} md={4} key={card.id}>
                 <Card className={classes.card}>
                   <CardContent>
-                    <Typography color="primary" gutterBottom>
+                    <Typography
+                      variant="h6"
+                      component="h2"
+                      color="primary"
+                      gutterBottom
+                    >
                       {card.title}
                     </Typography>
                     <Typography>{card.description}</Typography>

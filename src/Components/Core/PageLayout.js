@@ -21,7 +21,7 @@ function PageLayout({ children, pageTitle, classes, bgcolor }) {
       <Box my={4} bgcolor={bgcolor}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Typography variant="h6" color="inherit" noWrap>
+            <Typography variant="h4" component="h1" noWrap>
               {headerTitle}
             </Typography>
           </Grid>

@@ -11,13 +11,13 @@ const MenuItems = {
       url: "/sign-in",
     },
     {
-      id: "sample",
-      name: "Sample 1",
+      id: "poc",
+      name: "POCs",
       children: [
         {
-          id: "sample-child-1",
-          name: "Sample Child-1",
-          url: "/sample-child-1",
+          id: "poc-okta",
+          name: "Okta OIDC",
+          url: "/poc/oidc",
         },
         {
           id: "sample-child-2",

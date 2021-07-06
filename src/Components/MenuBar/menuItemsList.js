@@ -47,6 +47,12 @@ const MenuItems = {
         },
       ],
     },
+    {
+      id: "github",
+      name: "GitHub",
+      url: "https://github.com/jagjitgill/react-mui-starter",
+      external: true,
+    },
   ],
 };
 

@@ -15,14 +15,14 @@ const MenuItems = {
       name: "POCs",
       children: [
         {
+          id: "filters",
+          name: "Filters",
+          url: "/poc/filters",
+        },
+        {
           id: "poc-okta",
           name: "Okta OIDC",
           url: "/poc/oidc",
-        },
-        {
-          id: "sample-child-2",
-          name: "Sample Child-2",
-          url: "/sample-child-2",
         },
         {
           id: "sample-child-3",

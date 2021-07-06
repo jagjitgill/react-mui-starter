@@ -8,6 +8,7 @@ import Error404 from "./Pages/Error/404";
 import BaseLayout from "./Components/Core/BaseLayout";
 import SignIn from "./Pages/SignIn";
 import OktaOIDC from "./Pages/POC/Okta/OktaOIDC";
+import Filters from "./Pages/POC/Filters";
 // const Error404 = React.lazy(() => import('./Pages/Error/404'))
 
 const historyObj = createBrowserHistory();
@@ -21,6 +22,7 @@ const Routes = () => (
           <Route exact path="/sign-in" component={SignIn} />
           <Route exact path="/poc/oidc" component={OktaOIDC} />
           <Route exact path="/poc/oidc/callback" component={OktaOIDC} />
+          <Route exact path="/poc/filters" component={Filters} />
           <Route component={Error404} />
         </Switch>
       </BaseLayout>

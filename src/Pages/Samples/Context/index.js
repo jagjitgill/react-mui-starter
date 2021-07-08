@@ -3,12 +3,12 @@ import Grid from "@material-ui/core/Grid";
 import ContextChildOne from "./ContextChildOne";
 import ContextChildTwo from "./ContextChildTwo";
 import PageLayout from "../../../Components/Core/PageLayout";
-import { ContextPOCContextProvider } from "./context";
+import { SampleContextProvider } from "./context";
 
-function ContextPOC() {
+function ContextSample() {
   return (
     <PageLayout>
-      <ContextPOCContextProvider>
+      <SampleContextProvider>
         <Grid container>
           <Grid item xs={6}>
             <ContextChildOne />
@@ -17,9 +17,9 @@ function ContextPOC() {
             <ContextChildTwo />
           </Grid>
         </Grid>
-      </ContextPOCContextProvider>
+      </SampleContextProvider>
     </PageLayout>
   );
 }
 
-export default ContextPOC;
+export default ContextSample;

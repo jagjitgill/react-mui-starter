@@ -1,6 +1,6 @@
 const OKTA_BASE = process.env.REACT_APP_OKTA_BASE || null;
 const ISSUER = process.env.REACT_APP_ISSUER || null;
-const REDIRECT_URI = `${window.location.origin}/poc/oidc/callback`;
+const REDIRECT_URI = `${window.location.origin}/sample/oidc/callback`;
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID || null;
 
 const config = {
@@ -12,7 +12,7 @@ const config = {
     pkce: true,
     disableHttpsCheck: false,
     useInteractionCode: false,
-    postLogoutRedirectUri: `${window.location.origin}/poc/oidc`,
+    postLogoutRedirectUri: `${window.location.origin}/sample/oidc`,
     tokenManager: {
       storage: "sessionStorage",
     },

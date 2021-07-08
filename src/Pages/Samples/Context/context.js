@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ContextPOCContext = React.createContext();
+const SampleContext = React.createContext();
 
-function ContextPOCContextProvider({ children }) {
+function SampleContextProvider({ children }) {
   const [counter, setCounter] = React.useState(0);
   const value = {
     counter,
@@ -13,15 +13,13 @@ function ContextPOCContextProvider({ children }) {
   };
 
   return (
-    <ContextPOCContext.Provider value={value}>
-      {children}
-    </ContextPOCContext.Provider>
+    <SampleContext.Provider value={value}>{children}</SampleContext.Provider>
   );
 }
-ContextPOCContextProvider.propTypes = {
+SampleContextProvider.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
 };
-export { ContextPOCContext, ContextPOCContextProvider };
+export { SampleContext, SampleContextProvider };

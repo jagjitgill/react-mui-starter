@@ -125,7 +125,7 @@ class Filters extends Component {
       </Grid>
     ));
     return (
-      <PageLayout pageTitle="POC: Filters">
+      <PageLayout pageTitle="Sample: Filters">
         <Loading loading={loading} copy="Loading..." />
         <Grid spacing={10} alignItems="center" justify="center" container>
           <Grid item xs={12}>

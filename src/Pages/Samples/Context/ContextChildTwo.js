@@ -6,7 +6,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { ContextPOCContext, ContextPOCContextProvider } from "./context";
+import { SampleContext, SampleContextProvider } from "./context";
 
 const useStyles = makeStyles({
   root: {
@@ -16,10 +16,10 @@ const useStyles = makeStyles({
 
 export default function ContextChildTwo() {
   const classes = useStyles();
-  const { counter, increment } = React.useContext(ContextPOCContext);
+  const { counter, increment } = React.useContext(SampleContext);
 
   return (
-    <ContextPOCContextProvider>
+    <SampleContextProvider>
       <Card className={classes.root}>
         <CardActionArea>
           <CardContent>
@@ -37,6 +37,6 @@ export default function ContextChildTwo() {
           </Button>
         </CardActions>
       </Card>
-    </ContextPOCContextProvider>
+    </SampleContextProvider>
   );
 }

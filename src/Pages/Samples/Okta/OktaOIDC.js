@@ -130,7 +130,7 @@ class OktaOIDC extends Component {
     console.log("Render: OktaOIDC");
 
     return (
-      <PageLayout pageTitle="POC: Okta OIDC">
+      <PageLayout pageTitle="Sample: Okta OIDC">
         <Loading loading={loading} copy="Loading..." />
         <Grid spacing={10} alignItems="center" justify="center" container>
           <Grid item xs={12}>
@@ -157,8 +157,8 @@ class OktaOIDC extends Component {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://github.com/jagjitgill/react-mui-starter/blob/poc/src/Pages/POC/Okta/OktaOIDC.js">
-                  - POC source code
+                <Link href="https://github.com/jagjitgill/react-mui-starter/blob/sample/src/Pages/Sample/Okta/OktaOIDC.js">
+                  - Sample source code
                 </Link>
               </ListItem>
             </List>

@@ -140,11 +140,11 @@ const TopBar = () => {
               >
                 <MaterialLink
                   color="primary"
-                  href="/"
+                  href={subOption.external ? subOption.url : "/"}
                   className={classes.menuLink}
-                  component={Link}
+                  component={subOption.external ? "a" : Link}
                   variant="body1"
-                  to={subOption.url}
+                  to={subOption.external ? null : subOption.url}
                 >
                   {t(subOption.name)}
                 </MaterialLink>
@@ -196,7 +196,7 @@ const TopBar = () => {
           <Box display="flex">
             <img src={Logo} alt="Logo" className={classes.logo} />
             <Typography component="div" className={classes.brand}>
-              Brand Name
+              UI Playground
             </Typography>
             <Divider orientation="vertical" flexItem />
           </Box>

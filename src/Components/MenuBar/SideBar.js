@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import List from "@material-ui/core/List";
+import { Link as MaterialLink } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -9,19 +10,35 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Drawer from "@material-ui/core/Drawer";
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { Link } from "react-router-dom";
 import MenuItems from "./menuItemsList";
 
-const styles = {
+const useStyles = makeStyles((theme) => ({
   list: {
     minWidth: 200,
   },
   link: {
     textDecoration: "none",
+  },
+  menuLinkWrapper: {
+    padding: 0,
+  },
+  menuLink: {
+    textDecoration: "none",
+    padding: theme.spacing(1),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    width: "100%",
+    whiteSpace: "nowrap",
+    "&:hover,&:focus": {
+      textDecoration: "none",
+      cursor: "pointer",
+      backgroundColor: theme.palette.grey[200],
+    },
   },
   menuHeader: {
     paddingLeft: "30px",
@@ -30,10 +47,12 @@ const styles = {
     display: "flex",
     justifyContent: "flex-end",
   },
-};
+}));
+
 const SideBar = (props) => {
+  const classes = useStyles();
   const [openItems, setOpenItems] = useState([]);
-  const { classes, isOpen, drawerSide } = props;
+  const { isOpen, drawerSide } = props;
 
   const handleExpandableItemClick = (currentItem) => {
     if (openItems.includes(currentItem)) {
@@ -49,14 +68,17 @@ const SideBar = (props) => {
       if (!subOption.children) {
         return (
           <div key={subOption.id}>
-            <ListItem button>
-              <Link to={subOption.url} className={classes.link}>
-                <ListItemText
-                  primary={
-                    <Typography color="primary">{subOption.name}</Typography>
-                  }
-                />
-              </Link>
+            <ListItem className={classes.menuLinkWrapper}>
+              <MaterialLink
+                color="primary"
+                href={subOption.external ? subOption.url : "/"}
+                className={classes.menuLink}
+                component={subOption.external ? "a" : Link}
+                variant="body1"
+                to={subOption.external ? null : subOption.url}
+              >
+                {subOption.name}
+              </MaterialLink>
             </ListItem>
           </div>
         );
@@ -64,8 +86,8 @@ const SideBar = (props) => {
       return (
         <Box key={subOption.id} color="primary">
           <ListItem
-            button
             onClick={() => handleExpandableItemClick(subOption.id)}
+            button
           >
             <ListItemText
               primary={
@@ -120,15 +142,13 @@ const SideBar = (props) => {
 };
 
 SideBar.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string),
   isOpen: PropTypes.bool,
   handleDisplayChange: PropTypes.func.isRequired,
   drawerSide: PropTypes.string,
 };
 SideBar.defaultProps = {
-  classes: null,
   isOpen: false,
   drawerSide: "right",
 };
 
-export default withStyles(styles)(SideBar);
+export default SideBar;

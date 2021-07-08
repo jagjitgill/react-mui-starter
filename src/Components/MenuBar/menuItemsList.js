@@ -11,18 +11,23 @@ const MenuItems = {
       url: "/sign-in",
     },
     {
-      id: "sample",
-      name: "Sample 1",
+      id: "poc",
+      name: "POCs",
       children: [
         {
-          id: "sample-child-1",
-          name: "Sample Child-1",
-          url: "/sample-child-1",
+          id: "filters",
+          name: "Filters",
+          url: "/poc/filters",
         },
         {
-          id: "sample-child-2",
-          name: "Sample Child-2",
-          url: "/sample-child-2",
+          id: "context",
+          name: "Context",
+          url: "/poc/context",
+        },
+        {
+          id: "poc-okta",
+          name: "Okta OIDC",
+          url: "/poc/oidc",
         },
         {
           id: "sample-child-3",
@@ -46,6 +51,12 @@ const MenuItems = {
           ],
         },
       ],
+    },
+    {
+      id: "github",
+      name: "GitHub",
+      url: "https://github.com/jagjitgill/react-mui-starter",
+      external: true,
     },
   ],
 };

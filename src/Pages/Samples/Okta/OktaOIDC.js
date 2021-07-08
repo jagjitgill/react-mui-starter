@@ -157,7 +157,7 @@ class OktaOIDC extends Component {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://github.com/jagjitgill/react-mui-starter/blob/sample/src/Pages/Sample/Okta/OktaOIDC.js">
+                <Link href="https://github.com/jagjitgill/react-mui-starter/blob/master/src/Pages/Samples/Okta/OktaOIDC.js">
                   - Sample source code
                 </Link>
               </ListItem>

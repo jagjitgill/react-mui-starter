@@ -196,7 +196,7 @@ const TopBar = () => {
           <Box display="flex">
             <img src={Logo} alt="Logo" className={classes.logo} />
             <Typography component="div" className={classes.brand}>
-              UI Playground
+              react-mui-starter
             </Typography>
             <Divider orientation="vertical" flexItem />
           </Box>

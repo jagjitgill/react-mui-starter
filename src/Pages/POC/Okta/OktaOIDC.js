@@ -20,17 +20,7 @@ import config from "./config";
 import UserInfo from "./UserInfo";
 import PageLayout from "../../../Components/Core/PageLayout";
 
-const styles = (theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.grey.A500,
-    overflow: "hidden",
-    backgroundSize: "cover",
-    backgroundPosition: "0 400px",
-    marginTop: 20,
-    padding: 20,
-    paddingBottom: 200,
-  },
+const styles = () => ({
   pre: {
     overflow: "scroll",
     maxHeight: "200px",
@@ -167,7 +157,7 @@ class OktaOIDC extends Component {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="https://github.com/ncr-swt-banking/csp-ui-playground/blob/master/src/components/POCs/OktaOIDC/index.js">
+                <Link href="https://github.com/jagjitgill/react-mui-starter/blob/poc/src/Pages/POC/Okta/OktaOIDC.js">
                   - POC source code
                 </Link>
               </ListItem>

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import withStyles from "@material-ui/styles/withStyles";
 import {
   Chip,
   Box,
@@ -14,28 +12,6 @@ import tasks from "./tasks";
 import FilterButton from "./FilterButton";
 import Loading from "../../../Components/Core/Loading";
 import PageLayout from "../../../Components/Core/PageLayout";
-
-const styles = (theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.grey.A500,
-    overflow: "hidden",
-    backgroundSize: "cover",
-    backgroundPosition: "0 400px",
-    marginTop: 20,
-    padding: 20,
-    paddingBottom: 200,
-  },
-  todoItems: {
-    display: "flex",
-    flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(1),
-      padding: theme.spacing(1),
-      width: theme.spacing(36),
-    },
-  },
-});
 
 class Filters extends Component {
   constructor(props) {
@@ -89,7 +65,6 @@ class Filters extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     const { filterCategories, taskList, filter, categories, loading } =
       this.state;
     // eslint-disable-next-line no-console
@@ -129,19 +104,25 @@ class Filters extends Component {
     ));
 
     const filteredTasks = taskList.filter(FILTER_MAP[filter]).map((task) => (
-      <Paper key={task.id}>
-        <Box mb={3}>{task.name}</Box>
-        <Box mr={1} component="span">
-          <Chip label={task.category} variant="outlined" />
+      <Grid item xs={12} sm={6} md={4}>
+        <Box m={1}>
+          <Paper key={task.id}>
+            <Box p={2}>
+              <Box mb={3}>{task.name}</Box>
+              <Box mr={1} component="span">
+                <Chip label={task.category} variant="outlined" />
+              </Box>
+              <Box mr={1} component="span">
+                <Chip
+                  label={task.completed ? "completed" : "pending"}
+                  variant="outlined"
+                  color={task.completed ? "primary" : "secondary"}
+                />
+              </Box>
+            </Box>
+          </Paper>
         </Box>
-        <Box mr={1} component="span">
-          <Chip
-            label={task.completed ? "completed" : "pending"}
-            variant="outlined"
-            color={task.completed ? "primary" : "secondary"}
-          />
-        </Box>
-      </Paper>
+      </Grid>
     ));
     return (
       <PageLayout pageTitle="POC: Filters">
@@ -154,19 +135,14 @@ class Filters extends Component {
                 <br />
                 {filterCategoriesList}
               </Grid>
-              <Grid
-                item
-                xs={12}
-                className={filteredTasks.length && classes.todoItems}
-              >
-                {filteredTasks.length === 0 ? (
-                  <Alert severity="info">
-                    No item found for selected criteria.
-                  </Alert>
-                ) : (
-                  filteredTasks
-                )}
-              </Grid>
+
+              {filteredTasks.length === 0 ? (
+                <Alert severity="info">
+                  No item found for selected criteria.
+                </Alert>
+              ) : (
+                filteredTasks
+              )}
             </Grid>
           </Grid>
         </Grid>
@@ -175,11 +151,4 @@ class Filters extends Component {
   }
 }
 
-Filters.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string),
-};
-Filters.defaultProps = {
-  classes: null,
-};
-
-export default withStyles(styles)(Filters);
+export default Filters;

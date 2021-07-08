@@ -20,6 +20,11 @@ const MenuItems = {
           url: "/poc/filters",
         },
         {
+          id: "context",
+          name: "Context",
+          url: "/poc/context",
+        },
+        {
           id: "poc-okta",
           name: "Okta OIDC",
           url: "/poc/oidc",

@@ -1,5 +1,4 @@
 build
 .env.development
-.env.production
 node_modules
 README.md

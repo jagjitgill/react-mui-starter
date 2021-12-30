@@ -12,7 +12,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Sample Home, Sign In and 404 page
 - Dynamic nested menu from json file
 - Other base features like loading, base layout and page layout component
-- Samples: Context, Filters and OpenID Connect flow using Okta
 - Created with [Create react app](https://github.com/facebook/create-react-app)
 ## Available Scripts
 

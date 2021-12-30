@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Typography from "@material-ui/core/Typography";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Backdrop from "@material-ui/core/Backdrop";
-import { withStyles } from "@material-ui/core/styles";
+import Typography from "@mui/material/Typography";
+import CircularProgress from "@mui/material/CircularProgress";
+import Backdrop from "@mui/material/Backdrop";
+import withStyles from "@mui/styles/withStyles";
 
 const styles = (theme) => ({
   loadingMessage: {

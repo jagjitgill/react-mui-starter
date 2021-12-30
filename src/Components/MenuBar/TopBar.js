@@ -1,23 +1,29 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuIcon from "@material-ui/icons/Menu";
-import Box from "@material-ui/core/Box";
-import { Link as MaterialLink, Typography } from "@material-ui/core";
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-import Hidden from "@material-ui/core/Hidden";
-import withWidth from "@material-ui/core/withWidth";
-import Divider from "@material-ui/core/Divider";
+import makeStyles from "@mui/styles/makeStyles";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from "@mui/icons-material/Menu";
+import Box from "@mui/material/Box";
+import { Link as MaterialLink, Typography } from "@mui/material";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Hidden from "@mui/material/Hidden";
+import Divider from "@mui/material/Divider";
 // import {withRouter} from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SideBar from "./SideBar";
 import menuItemsList from "./menuItemsList";
 import Logo from "../../logo.svg";
+
+// FIXME checkout https://mui.com/components/use-media-query/#migrating-from-withwidth
+const withWidth = () => (WrappedComponent) => (props) =>
+  (
+    // eslint-disable-next-line prettier/prettier, react/jsx-props-no-spreading
+    <WrappedComponent {...props} width="xs" />
+  );
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -201,7 +207,7 @@ const TopBar = () => {
             <Divider orientation="vertical" flexItem />
           </Box>
           <Box className={classes.menuWrapper} display="flex">
-            <Hidden smDown>{renderMenuItems(menuItemsList.data)}</Hidden>
+            <Hidden mdDown>{renderMenuItems(menuItemsList.data)}</Hidden>
             <Hidden mdUp>
               <IconButton
                 edge="start"
@@ -209,6 +215,7 @@ const TopBar = () => {
                 color="inherit"
                 aria-label={t("Menu")}
                 onClick={() => toggleSidebarDisplay()}
+                size="large"
               >
                 <MenuIcon />
               </IconButton>

@@ -7,8 +7,8 @@ import {
   CardActions,
   Button,
   Grid,
-} from "@material-ui/core";
-import withStyles from "@material-ui/core/styles/withStyles";
+} from "@mui/material";
+import withStyles from "@mui/styles/withStyles";
 import { Link } from "react-router-dom";
 import PageLayout from "../../Components/Core/PageLayout";
 import cardsList from "./cardsList";

@@ -1,10 +1,10 @@
 # stage: 1
-FROM node:14.17.1-alpine as react-build
+FROM node:16-alpine as react-build
 WORKDIR /app
 
 COPY . ./
 # Credentials for local development
-COPY docker/.env.local ./.env.local
+# COPY docker/.env.local ./.env.local
 
 RUN yarn install
 RUN yarn build

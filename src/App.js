@@ -1,15 +1,17 @@
 import React from "react";
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 import MuiTheme from "./MuiTheme";
 import Routes from "./routes";
 
 function App() {
   return (
-    <ThemeProvider theme={MuiTheme}>
-      <CssBaseline />
-      <Routes />
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={MuiTheme}>
+        <CssBaseline />
+        <Routes />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

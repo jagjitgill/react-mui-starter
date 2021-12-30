@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import List from "@material-ui/core/List";
-import { Link as MaterialLink } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
-import Collapse from "@material-ui/core/Collapse";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import Drawer from "@material-ui/core/Drawer";
-import { makeStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import List from "@mui/material/List";
+import { Link as MaterialLink } from "@mui/material";
+import Box from "@mui/material/Box";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
+import Collapse from "@mui/material/Collapse";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Drawer from "@mui/material/Drawer";
+import makeStyles from "@mui/styles/makeStyles";
+import IconButton from "@mui/material/IconButton";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Link } from "react-router-dom";
 import MenuItems from "./menuItemsList";
 
@@ -125,7 +125,10 @@ const SideBar = (props) => {
         <div>
           <List>
             <ListItem key="menuHeading" divider className={classes.alignRight}>
-              <IconButton onClick={() => props.handleDisplayChange(!isOpen)}>
+              <IconButton
+                onClick={() => props.handleDisplayChange(!isOpen)}
+                size="large"
+              >
                 {drawerSide === "left" ? (
                   <ChevronLeftIcon />
                 ) : (

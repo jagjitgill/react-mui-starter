@@ -19,6 +19,7 @@ import menuItemsList from "./menuItemsList";
 import Logo from "../../logo.svg";
 
 // FIXME checkout https://mui.com/components/use-media-query/#migrating-from-withwidth
+// eslint-disable-next-line react/display-name
 const withWidth = () => (WrappedComponent) => (props) =>
   (
     // eslint-disable-next-line prettier/prettier, react/jsx-props-no-spreading

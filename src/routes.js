@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Router, Switch } from "react-router-dom";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { createBrowserHistory } from "history";
 import ScrollToTop from "./Components/Core/ScrollToTop";
 import Home from "./Pages/Home";
